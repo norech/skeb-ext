@@ -86,6 +86,9 @@ const listen = async () => {
         if (!link.href.includes("/works/"))
             continue;
 
+        if (!link.innerText.includes("Seeking"))
+            continue;
+
         if (link.querySelector(".comminfos") || link.classList.contains("skeb-ext-processing"))
             continue;
 

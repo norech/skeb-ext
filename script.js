@@ -34,7 +34,7 @@ function fetchArtistCommissionInfos(artist) {
                 const doc = frame.contentDocument;
                 const sidebar = doc.querySelector(".column.is-3");
                 const requestButton = sidebar.querySelector(".button.is-primary");
-                const isFollowing = sidebar.querySelectorAll(".button.is-info").find(e => e.innerText.includes("Following"));
+                const isFollowing = Array.from(sidebar.querySelectorAll(".button.is-info")).find(e => e.innerText.includes("Following"));
                 if (!requestButton || !requestButton.innerText.includes("New request")) {
                     artistCommInfo[artist] = artistData;
                     artistsProcessed.push(artist);
